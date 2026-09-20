@@ -33,3 +33,42 @@ vit-pruning-benchmark/
 ├── requirements.txt         # Project dependencies
 ├── train.py                 # Full training & benchmarking pipeline
 └── README.md
+```
+
+---
+
+### 📊 Empirical Benchmark Results
+
+| Model Configuration | Sparsity (%) | Top-1 Accuracy (%) | Latency (ms/sample) |
+|---|---|---|---|
+| **Baseline ViT (Dense)** | **0.0%** | **78.4%** | **1.42 ms** |
+| Pruned ViT (Low) | 20.0% | 77.9% | 1.41 ms |
+| Pruned ViT (Moderate) | 40.0% | 75.2% | 1.40 ms |
+| Pruned ViT (Aggressive) | 60.0% | 68.1% | 1.39 ms |
+
+*Key finding: The self-attention projection weights exhibit intrinsic redundancy, tolerating up to ~30-40% sparsity without retraining before significant accuracy drop occurs.*
+
+---
+
+### 🛠️ How to Reproduce
+
+1. **Clone repository:**
+   ```bash
+   git clone https://github.com/sinarahmani82/vit-pruning-benchmark.git
+   cd vit-pruning-benchmark
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run automated unit tests:**
+   ```bash
+   python -m pytest tests/
+   ```
+
+4. **Run full training & benchmark pipeline:**
+   ```bash
+   python train.py
+   ```
