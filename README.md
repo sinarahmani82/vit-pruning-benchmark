@@ -40,7 +40,7 @@ vit-pruning-benchmark/
 ### 📊 Empirical Benchmark Results
 
 <div align="center">
-  <img src="assets/benchmark_results.png" alt="ViT Pruning Benchmark Results" width="85%" />
+  <img src="benchmark_results.png" alt="ViT Pruning Benchmark Results" width="85%" />
   <p><em>Figure 1: Empirical trade-off curve between parametric sparsity, top-1 accuracy, and inference latency on CIFAR-10.</em></p>
 </div>
 
